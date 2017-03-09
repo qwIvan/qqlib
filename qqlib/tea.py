@@ -61,7 +61,7 @@ def encrypt(v, k):
     filln = (6 - vl) % 8
     v_arr = (
         bytes(bytearray([filln | 0xf8])),
-        os.urandom() * (filln + 2),  # random char * (filln + 2)
+        os.urandom(filln + 2),  # random char * (filln + 2)
         v,
         b'\0' * 7,
     )
